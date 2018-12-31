@@ -1,0 +1,15 @@
+[submodule "src/RMCIOS-interface"]
+	path = src/RMCIOS-interface
+	url = https://github.com/fkorhone/RMCIOS-interface.git
+[submodule "src/RMCIOS-system"]
+	path = src/RMCIOS-system
+	url = https://github.com/fkorhone/RMCIOS-system.git
+[submodule "src/RMCIOS-base-module"]
+	path = src/RMCIOS-base-module
+	url = https://github.com/fkorhone/RMCIOS-base-module.git
+[submodule "src/RMCIOS-std-module"]
+	path = src/RMCIOS-std-module
+	url = https://github.com/fkorhone/RMCIOS-std-module.git
+[submodule "src/RMCIOS-Linux-module"]
+	path = src/RMCIOS-Linux-module
+	url = https://github.com/fkorhone/RMCIOS-Linux-module.git
