@@ -40,8 +40,8 @@ void stdio_class_func(void *this,
                       const struct context_rmcios *context, int id, 
                       enum function_rmcios function,
                       enum type_rmcios paramtype,
-                      union param_rmcios returnv, 
-                      int num_params,union param_rmcios param)
+                      struct combo_rmcios *returnv, 
+                      int num_params,const union param_rmcios param)
 {
 	int plen ;
 	const char *s; 
@@ -65,11 +65,11 @@ void stdio_class_func(void *this,
 // Channel for printout         
 //////////////////////////////////////////////////////////////////////////
 void stdout_func (void *data,
-                  const struct context_rmcios *context, int id,
-                  enum function_rmcios function,
-                  enum type_rmcios paramtype,
-                  union param_rmcios returnv,
-                  int num_params, const union param_rmcios param)
+                      const struct context_rmcios *context, int id, 
+                      enum function_rmcios function,
+                      enum type_rmcios paramtype,
+                      struct combo_rmcios *returnv, 
+                      int num_params,const union param_rmcios param)
 {
    switch (function)
    {
@@ -88,18 +88,18 @@ void stdout_func (void *data,
 }
 
 // Channel function for allocating and freeing memory
-void mem_func (void *data,
-               const struct context_rmcios *context, int id,
+void mem_func (void *data, 
+               const struct context_rmcios *context, int id, 
                enum function_rmcios function,
                enum type_rmcios paramtype,
-               union param_rmcios returnv,
+               struct combo_rmcios *returnv, 
                int num_params, const union param_rmcios param)
 {
    switch (function)
    {
    case help_rmcios:
       // MEMORY INTERFACE: 
-      return_string (context, paramtype, returnv,
+      return_string (context, returnv,
                      " read mem \r\n -read ammount of free memory\r\n"
                      " write mem \r\n -read memory allocation block size\r\n"
                      " write mem n_bytes \r\n Allocate n bytes of memory\r\n"
@@ -127,7 +127,7 @@ void mem_func (void *data,
          void *ptr = malloc (param_to_integer (context, paramtype,
                                                (const union param_rmcios)
                                                param, 0));
-         return_binary (context, paramtype, returnv, (char *) &ptr,
+         return_binary (context, returnv, (char *) &ptr,
                         sizeof (ptr));
       }
       if (num_params > 1)
