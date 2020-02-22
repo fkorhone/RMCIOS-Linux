@@ -1,0 +1,33 @@
+name: C/C++ CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: clone submodules
+      run: git submodule update --init
+
+    - name: compile
+      run: src\compile_RMCIOS.sh
+
+    - name: make dir
+      run: mkdir artifacts
+
+    - name: copy
+      run: copy RMCIOS.bin artifacts/
+    - name: copy
+      run: copy LICENSE artifacts/
+    - name: copy
+
+    - uses: actions/upload-artifact@v1
+      name: upload
+      with:
+        name: RMCIOS-Linux-binary
+        path: artifacts   
+ 
+

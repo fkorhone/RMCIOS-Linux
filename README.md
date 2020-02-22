@@ -2,6 +2,10 @@
 RMCIOS Linux version. 
 www.rmcios.fi
 
+### Clone submodules before compiling:
+execute from command prompt:
+git submodule update --init --recursive
+
 ## Compiling
 Install gcc and git(needed for version hash generation)
 Execute src/compile-RMCIOS.sh 
