@@ -22,7 +22,6 @@ jobs:
       run: copy RMCIOS.bin artifacts/
     - name: copy
       run: copy LICENSE artifacts/
-    - name: copy
 
     - uses: actions/upload-artifact@v1
       name: upload
