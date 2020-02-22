@@ -9,7 +9,7 @@ jobs:
     
     steps:
     - name: install tools
-      run: sudo apt install gcc-arm-linux-gnueabih
+      run: sudo apt install gcc-arm-linux-gnueabihf
 
     - uses: actions/checkout@v2
     - name: clone submodules
