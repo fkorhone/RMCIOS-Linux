@@ -19,9 +19,9 @@ jobs:
       run: mkdir artifacts
 
     - name: copy
-      run: copy RMCIOS.bin artifacts/
+      run: cp RMCIOS.bin artifacts/
     - name: copy
-      run: copy LICENSE artifacts/
+      run: cp LICENSE artifacts/
 
     - uses: actions/upload-artifact@v1
       name: upload
