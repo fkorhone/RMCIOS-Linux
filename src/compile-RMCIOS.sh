@@ -3,7 +3,7 @@
 PROJECT_DIR=$PWD
 scriptdir=`dirname "$BASH_SOURCE"`
 cd $scriptdir
-
+: ${CC=gcc}
 INTERFACE_DIR=RMCIOS-interface
 SRC_DIR=RMCIOS-Linux-module
 
