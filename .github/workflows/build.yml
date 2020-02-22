@@ -22,12 +22,13 @@ jobs:
       run: src/compile-RMCIOS.sh
       env: 
           CC: arm-linux-gnueabih-gcc
+          OUTPUT_FILE: RMCIOS-ARM.bin
 
     - name: make dir
       run: mkdir artifacts
 
     - name: copy
-      run: cp RMCIOS.bin artifacts/
+      run: cp *.bin artifacts/
     - name: copy
       run: cp LICENSE artifacts/
 

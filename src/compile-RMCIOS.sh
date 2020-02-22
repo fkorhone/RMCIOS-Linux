@@ -22,7 +22,6 @@ SOURCES+=" RMCIOS-std-module/*.c"
 SOURCES+=" RMCIOS-Linux-module/*.c" 
 
 OUTPUT_DIR=..
-OUTPUT_FILE=$FILENAME.bin
 
 . version_str.sh
  
@@ -35,8 +34,8 @@ CFLAGS+=" -I $PROJECTDIR/RMCIOS-base_module/"
 CFLAGS+=" -DVERSION_STR=\"$VERSION_STR\""
 
 # Compile command/s
-echo $SOURCES -o $OUTPUT_DIR/$OUTPUT_FILE $CFLAGS
-gcc $SOURCES -o $OUTPUT_DIR/$OUTPUT_FILE $CFLAGS
+echo $CC $SOURCES -o $OUTPUT_DIR/$OUTPUT_FILE $CFLAGS
+$CC $SOURCES -o $OUTPUT_DIR/$OUTPUT_FILE $CFLAGS
 
 # Execute program
 #echo "Running $OUTPUT_DIR/$OUTPUT_FILE"
