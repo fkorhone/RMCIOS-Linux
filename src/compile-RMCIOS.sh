@@ -3,13 +3,16 @@
 PROJECT_DIR=$PWD
 scriptdir=`dirname "$BASH_SOURCE"`
 cd $scriptdir
+
+FILENAME=RMCIOS
 : ${CC=gcc}
+: ${OUTPUT_FILE=$FILENAME.bin}
 INTERFACE_DIR=RMCIOS-interface
 SRC_DIR=RMCIOS-Linux-module
 
 # Settings
 PROJECTDIR=$(pwd)
-FILENAME=RMCIOS
+
 SOURCES="RMCIOS-Linux.c"
 SOURCES+=" string-conversion.c"
 SOURCES+=" RMCIOS-system/RMCIOS-system.c" 
@@ -31,11 +34,8 @@ CFLAGS+=" -I $PROJECTDIR/RMCIOS-std_module/"
 CFLAGS+=" -I $PROJECTDIR/RMCIOS-base_module/"
 CFLAGS+=" -DVERSION_STR=\"$VERSION_STR\""
 
-# Compile
-echo "compiling $SOURCES"
-echo "CFLAGS: $CFLAGS"
-
 # Compile command/s
+echo $SOURCES -o $OUTPUT_DIR/$OUTPUT_FILE $CFLAGS
 gcc $SOURCES -o $OUTPUT_DIR/$OUTPUT_FILE $CFLAGS
 
 # Execute program
