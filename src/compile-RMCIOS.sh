@@ -1,6 +1,9 @@
 #!/bin/bash
 
 PROJECT_DIR=$PWD
+scriptdir=`dirname "$BASH_SOURCE"`
+cd $scriptdir
+
 INTERFACE_DIR=RMCIOS-interface
 SRC_DIR=RMCIOS-Linux-module
 
@@ -36,8 +39,10 @@ echo "CFLAGS: $CFLAGS"
 gcc $SOURCES -o $OUTPUT_DIR/$OUTPUT_FILE $CFLAGS
 
 # Execute program
-echo "Running $OUTPUT_DIR/$OUTPUT_FILE"
-$OUTPUT_DIR/$OUTPUT_FILE 
+#echo "Running $OUTPUT_DIR/$OUTPUT_FILE"
+#$OUTPUT_DIR/$OUTPUT_FILE 
 #cd %OUTPUT_DIR%
-read -rsp $'Press enter to continue...\n'
+#read -rsp $'Press enter to continue...\n'
+
+cd $PROJECTDIR
 
