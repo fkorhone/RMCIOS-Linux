@@ -21,7 +21,7 @@ jobs:
     - name: compile arm
       run: src/compile-RMCIOS.sh
       env: 
-          CC: arm-linux-gnueabih-gcc
+          CC: arm-linux-gnueabihf-gcc
           OUTPUT_FILE: RMCIOS-ARM.bin
 
     - name: make dir
